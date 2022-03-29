@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include<stdlib.h>
+struct node{
+    int data;
+    struct node* next;
+};
+void print_list(struct node* temp1);
+int main(){
+    struct node *head,*newnode,*temp;
+    head=NULL;
+    
+    head=malloc(sizeof(struct node));
+    newnode=malloc(sizeof(struct node));
+    temp=malloc(sizeof(struct node));
+    
+    head->data=12;
+    head->next=newnode;
+    
+    newnode->data=22;
+    newnode->next=temp;
+    
+    temp->data=33;
+    temp->next=NULL;
+    
+    print_list(head);
+}
+void print_list(struct node* temp1){
+    int count=0;
+        while(temp1!=NULL){
+            count++;
+            printf("%d\n",temp1->data);
+            temp1=temp1->next;
+            printf("%d\n",count);
+        
+    }
+}
+
+
